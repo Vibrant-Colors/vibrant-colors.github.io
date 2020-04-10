@@ -1,24 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <img className="image" src="/mountainlake.jpg" alt=""/>
+        <div className="colors">
+          <span className="swatch"></span>
+          <span className="swatch"></span>
+          <span className="swatch"></span>
+          <span className="swatch"></span>
+          <span className="swatch"></span>
+          <span className="swatch"></span>
+        </div>
+        <img className="image" src="/highway.jpg" alt=""/>
+        <div className="colors">
+        <span className="swatch"></span>
+          <span className="swatch"></span>
+          <span className="swatch"></span>
+          <span className="swatch"></span>
+          <span className="swatch"></span>
+          <span className="swatch"></span>
+        </div>
+        <img className="image" src="/treebridge.jpg" alt=""/>
+        <div className="colors">
+        <span className="swatch"></span>
+          <span className="swatch"></span>
+          <span className="swatch"></span>
+          <span className="swatch"></span>
+          <span className="swatch"></span>
+          <span className="swatch"></span>
+        </div>
+        <img className="image" src="/nightumbrella.jpg" alt=""/>
+        <div className="colors">
+        <span className="swatch"></span>
+          <span className="swatch"></span>
+          <span className="swatch"></span>
+          <span className="swatch"></span>
+          <span className="swatch"></span>
+          <span className="swatch"></span>
+        </div>
+      </div>
     </div>
   );
 }
