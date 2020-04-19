@@ -1,0 +1,14 @@
+.colors{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 5rem;
+  column-gap: 5rem;
+}
+
+.swatch {
+  background-color: blue;
+  border-radius: 50%;
+}
