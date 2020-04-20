@@ -14,15 +14,15 @@ const Colors = ({ img }) => {
   })
   
   const runVibrant = useCallback((arr) => {
+    const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
     Vibrant.from(img).getPalette()
     .then(palette => setColors({
-      ...palette,
-      DarkMuted: palette.DarkMuted._rgb,
-      DarkVibrant: palette.DarkVibrant._rgb,
-      LightMuted: palette.LightMuted._rgb,
-      LightVibrant: palette.LightVibrant._rgb,
-      Muted: palette.Muted._rgb,
-      Vibrant: palette.Vibrant._rgb
+      DarkMuted: _rgbToString(palette.DarkMuted._rgb),
+      DarkVibrant: _rgbToString(palette.DarkVibrant._rgb),
+      LightMuted: _rgbToString(palette.LightMuted._rgb),
+      LightVibrant: _rgbToString(palette.LightVibrant._rgb),
+      Muted: _rgbToString(palette.Muted._rgb),
+      Vibrant: _rgbToString(palette.Vibrant._rgb)
     }))
   }, [img])
 
@@ -30,18 +30,12 @@ const Colors = ({ img }) => {
 
   return(
     <div className="colors">
-      <span className="swatch" style={{backgroundColor:
-       `rgb(${colors.DarkMuted[0]}, ${colors.DarkMuted[1]}, ${colors.DarkMuted[2]})`}}></span>
-      <span className="swatch" style={{backgroundColor:
-       `rgb(${colors.DarkVibrant[0]}, ${colors.DarkVibrant[1]}, ${colors.DarkVibrant[2]})`}}></span>
-      <span className="swatch" style={{backgroundColor:
-       `rgb(${colors.LightMuted[0]}, ${colors.LightMuted[1]}, ${colors.LightMuted[2]})`}}></span>
-      <span className="swatch" style={{backgroundColor:
-       `rgb(${colors.LightVibrant[0]}, ${colors.LightVibrant[1]}, ${colors.LightVibrant[2]})`}}></span>
-      <span className="swatch" style={{backgroundColor:
-       `rgb(${colors.Muted[0]}, ${colors.Muted[1]}, ${colors.Muted[2]})`}}></span>
-      <span className="swatch" style={{backgroundColor:
-       `rgb(${colors.Vibrant[0]}, ${colors.Vibrant[1]}, ${colors.Vibrant[2]})`}}></span>
+      <span className="swatch" style={{backgroundColor: colors.DarkMuted}}></span>
+      <span className="swatch" style={{backgroundColor: colors.DarkVibrant}}></span>
+      <span className="swatch" style={{backgroundColor: colors.LightMuted}}></span>
+      <span className="swatch" style={{backgroundColor: colors.LightVibrant}}></span>
+      <span className="swatch" style={{backgroundColor: colors.Muted}}></span>
+      <span className="swatch" style={{backgroundColor: colors.Vibrant}}></span>
     </div>
   )
 }
