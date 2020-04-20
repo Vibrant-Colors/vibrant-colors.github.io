@@ -16,7 +16,7 @@ const Colors = ({ img }) => {
   const runVibrant = useCallback((arr) => {
     Vibrant.from(img).getPalette()
     .then(palette => setColors({
-      ...colors,
+      ...palette,
       DarkMuted: palette.DarkMuted._rgb,
       DarkVibrant: palette.DarkVibrant._rgb,
       LightMuted: palette.LightMuted._rgb,
@@ -24,12 +24,10 @@ const Colors = ({ img }) => {
       Muted: palette.Muted._rgb,
       Vibrant: palette.Vibrant._rgb
     }))
-    return colors
-  }, [img, colors])
+  }, [img])
 
-  useEffect(() => runVibrant(), [])
+  useEffect(() => runVibrant(), [runVibrant])
 
-  console.log(colors)
   return(
     <div className="colors">
       <span className="swatch" style={{backgroundColor:
