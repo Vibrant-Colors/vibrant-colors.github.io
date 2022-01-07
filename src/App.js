@@ -3,7 +3,7 @@ import './App.css';
 import Colors from './Colors'
 
 const App = () => {
-  
+
   const [image, setImage] = useState("/placeholder.png")
 
   const onChange = event => {
@@ -11,15 +11,15 @@ const App = () => {
     const fileURL = URL.createObjectURL(event.target.files[0])
     setImage(fileURL)
   }
-  
+
   return (
     <div className="app container">
       <img className="image" src="/mountainlake.jpg" alt=""/>
       <Colors img="/mountainlake.jpg"/>
-      <img className="image" src="/peacockFeathers.jpg" alt=""/>
-      <Colors img="/peacockFeathers.jpg" />
-      <img className="image" src="/irelandPark.jpg" alt=""/>
-      <Colors img="/irelandPark.jpg"/>
+      <img className="image" src="/peacockfeathers.jpg" alt=""/>
+      <Colors img="/peacockfeathers.jpg" />
+      <img className="image" src="/irelandpark.jpg" alt=""/>
+      <Colors img="/irelandpark.jpg"/>
       <img className="image" src="/nightumbrella.jpg" alt=""/>
       <Colors img="/nightumbrella.jpg" />
       <img  className="image" src={image} alt=""/>
