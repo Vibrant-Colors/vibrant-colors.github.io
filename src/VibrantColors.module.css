@@ -1,0 +1,12 @@
+.colors {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 2rem;
+}
+
+.swatch {
+  border-radius: 12px;
+  padding: 14px 20px;
+}

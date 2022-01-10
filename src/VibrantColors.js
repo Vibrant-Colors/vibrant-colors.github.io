@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import './Colors.css';
+import styles from './VibrantColors.module.css';
 import * as Vibrant from 'node-vibrant';
 
-const Colors = ({ img }) => {
+const VibrantColors = ({ img }) => {
 
   const [colors, setColors] = useState({
     DarkMuted: [],
@@ -12,7 +12,7 @@ const Colors = ({ img }) => {
     Muted: [],
     Vibrant: [],
   })
-  
+
   const runVibrant = useCallback((arr) => {
     const _rgbToString = (_rgb) => `rgb(${_rgb[0]}, ${_rgb[1]}, ${_rgb[2]})`;
     Vibrant.from(img).getPalette()
@@ -29,15 +29,15 @@ const Colors = ({ img }) => {
   useEffect(() => runVibrant(), [runVibrant])
 
   return(
-    <div className="colors">
-      <span className="swatch" style={{backgroundColor: colors.DarkMuted}}></span>
-      <span className="swatch" style={{backgroundColor: colors.DarkVibrant}}></span>
-      <span className="swatch" style={{backgroundColor: colors.LightMuted}}></span>
-      <span className="swatch" style={{backgroundColor: colors.LightVibrant}}></span>
-      <span className="swatch" style={{backgroundColor: colors.Muted}}></span>
-      <span className="swatch" style={{backgroundColor: colors.Vibrant}}></span>
+    <div className={styles.colors}>
+      <button className={styles.swatch} style={{backgroundColor: colors.DarkMuted}}>Placeholder</button>
+      <button className={styles.swatch} style={{backgroundColor: colors.DarkVibrant}}>Placeholder</button>
+      <button className={styles.swatch} style={{backgroundColor: colors.LightMuted}}>Placeholder</button>
+      <button className={styles.swatch} style={{backgroundColor: colors.LightVibrant}}>Placeholder</button>
+      <button className={styles.swatch} style={{backgroundColor: colors.Muted}}>Placeholder</button>
+      <button className={styles.swatch} style={{backgroundColor: colors.Vibrant}}>Placeholder</button>
     </div>
   )
 }
 
-export default Colors;
+export default VibrantColors;

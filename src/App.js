@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './App.css';
-import Colors from './Colors'
+import styles from './App.module.css';
+import VibrantColors from './VibrantColors'
 
 const App = () => {
 
@@ -13,23 +13,29 @@ const App = () => {
   }
 
   return (
-    <div className="app container">
-      <img className="image" src="/mountainlake.jpg" alt=""/>
-      <Colors img="/mountainlake.jpg"/>
-      <img className="image" src="/peacockfeathers.jpg" alt=""/>
-      <Colors img="/peacockfeathers.jpg" />
-      <img className="image" src="/irelandpark.jpg" alt=""/>
-      <Colors img="/irelandpark.jpg"/>
-      <img className="image" src="/nightumbrella.jpg" alt=""/>
-      <Colors img="/nightumbrella.jpg" />
-      <img  className="image" src={image} alt=""/>
-      <Colors img={image} />
-      <div>
-        <label for="file-upload" class="button">
-          Choose Image...
-        </label>
-        <input id="file-upload" type="file" onChange={onChange}/>
+    <div className={styles.app}>
+      <div className={styles.hero}>
+       <img className={styles.heroImage} src="/mountainlake.jpg" alt=""/>
+       <VibrantColors img="/mountainlake.jpg"/>
       </div>
+      <div className={styles.examples}>
+        <img className={styles.image} src="/mountainlake.jpg" alt=""/>
+        <VibrantColors img="/mountainlake.jpg"/>
+        <img className={styles.image} src="/peacockfeathers.jpg" alt=""/>
+        <VibrantColors img="/peacockfeathers.jpg" />
+      <img className={styles.image} src="/irelandpark.jpg" alt=""/>
+      <VibrantColors img="/irelandpark.jpg"/>
+      <img className={styles.image} src="/nightumbrella.jpg" alt=""/>
+      <VibrantColors img="/nightumbrella.jpg" />
+         <img  className={styles.image} src={image} alt=""/>
+         <VibrantColors img={image} />
+       <div>
+         <label htmlFor="file-upload" className={styles.button}>
+           Choose Image...
+         </label>
+         <input id="file-upload" type="file" onChange={onChange}/>
+       </div>
+     </div>
     </div>
   );
 }
