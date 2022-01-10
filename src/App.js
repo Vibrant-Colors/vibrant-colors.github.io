@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import './App.css';
-import Colors from './Colors'
+import styles from './App.module.css';
+import { Colors } from './Colors';
 
 const App = () => {
 
-  const [image, setImage] = useState("/placeholder.png")
+  const [image, setImage] = useState("/mountainlake.jpg")
 
   const onChange = event => {
     event.preventDefault()
@@ -12,24 +12,26 @@ const App = () => {
     setImage(fileURL)
   }
 
+    /**
+     * @ToDo
+     * Change string file path to image so binding won't fail due to paths
+     */
+
   return (
-    <div className="app container">
-      <img className="image" src="/mountainlake.jpg" alt=""/>
-      <Colors img="/mountainlake.jpg"/>
-      <img className="image" src="/peacockfeathers.jpg" alt=""/>
-      <Colors img="/peacockfeathers.jpg" />
-      <img className="image" src="/irelandpark.jpg" alt=""/>
-      <Colors img="/irelandpark.jpg"/>
-      <img className="image" src="/nightumbrella.jpg" alt=""/>
-      <Colors img="/nightumbrella.jpg" />
-      <img  className="image" src={image} alt=""/>
-      <Colors img={image} />
-      <div>
-        <label for="file-upload" class="button">
-          Choose Image...
-        </label>
-        <input id="file-upload" type="file" onChange={onChange}/>
-      </div>
+    <div className={styles.app}>
+
+        <Colors file={image} className={styles.fullSize} />
+
+        <div className={`${styles.fullSize} ${styles.flex}`}>
+            <label htmlFor="file-upload" className={styles.button}>
+                Choose Image...
+            </label>
+            <input id="file-upload" type="file" onChange={onChange}/>
+        </div>
+
+       <Colors file="/peacockfeathers.jpg" />
+       <Colors file="/irelandpark.jpg" />
+
     </div>
   );
 }
