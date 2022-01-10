@@ -1,31 +1,30 @@
 .app {
+  width: 80vw;
+  margin: 0 auto;
   text-align: center;
   padding-bottom: 10px;
-}
-
-.examples {
-  width: 80vw;
-  margin: 0 auto;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 1rem;
-  row-gap: 25px;
+  grid-column-gap: 1rem;
 }
 
-.hero {
-  width: 80vw;
-  margin: 0 auto;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  border: 2px solid deeppink;
+@media screen and (max-width: 600px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fullSize {
+  grid-column: 1/3;
 }
 
 .heroImage {
+  height: 100%;
+  width: 100%;
   max-width: 100%;
-  max-height: 100%;
+  max-height: 200px;
   border-radius: 32px;
+  object-fit: cover;
 }
 
 .image {
@@ -57,4 +56,9 @@ input[type="file"] {
   text-decoration: none;
   border-radius: 3px;
   align-self: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
 }

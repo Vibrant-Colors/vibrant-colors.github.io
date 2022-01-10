@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styles from './App.module.css';
-import VibrantColors from './VibrantColors'
+import { Colors } from './Colors';
 
 const App = () => {
 
-  const [image, setImage] = useState("/placeholder.png")
+  const [image, setImage] = useState("/mountainlake.jpg")
 
   const onChange = event => {
     event.preventDefault()
@@ -12,30 +12,26 @@ const App = () => {
     setImage(fileURL)
   }
 
+    /**
+     * @ToDo
+     * Change string file path to image so binding won't fail due to paths
+     */
+
   return (
     <div className={styles.app}>
-      <div className={styles.hero}>
-       <img className={styles.heroImage} src="/mountainlake.jpg" alt=""/>
-       <VibrantColors img="/mountainlake.jpg"/>
-      </div>
-      <div className={styles.examples}>
-        <img className={styles.image} src="/mountainlake.jpg" alt=""/>
-        <VibrantColors img="/mountainlake.jpg"/>
-        <img className={styles.image} src="/peacockfeathers.jpg" alt=""/>
-        <VibrantColors img="/peacockfeathers.jpg" />
-      <img className={styles.image} src="/irelandpark.jpg" alt=""/>
-      <VibrantColors img="/irelandpark.jpg"/>
-      <img className={styles.image} src="/nightumbrella.jpg" alt=""/>
-      <VibrantColors img="/nightumbrella.jpg" />
-         <img  className={styles.image} src={image} alt=""/>
-         <VibrantColors img={image} />
-       <div>
-         <label htmlFor="file-upload" className={styles.button}>
-           Choose Image...
-         </label>
-         <input id="file-upload" type="file" onChange={onChange}/>
-       </div>
-     </div>
+
+        <Colors file={image} className={styles.fullSize} />
+
+        <div className={`${styles.fullSize} ${styles.flex}`}>
+            <label htmlFor="file-upload" className={styles.button}>
+                Choose Image...
+            </label>
+            <input id="file-upload" type="file" onChange={onChange}/>
+        </div>
+
+       <Colors file="/peacockfeathers.jpg" />
+       <Colors file="/irelandpark.jpg" />
+
     </div>
   );
 }
