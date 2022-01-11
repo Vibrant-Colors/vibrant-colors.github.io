@@ -1,7 +1,7 @@
 import React from 'react';
 
 import VibrantColors from './VibrantColors';
-import { Images } from './Images';
+import { Images, storybookImageLabels, storybookImageOptions } from './Images';
 
 export default {
     title: 'VibrantColors Component',
@@ -10,9 +10,9 @@ export default {
         img: {
             control: {
                 type: 'radio',
-                labels: Object.fromEntries(Object.entries(Images).map(([key, val]) => [val, key]))
+                labels: storybookImageLabels()
             },
-            options: Object.entries(Images).map(([, image]) => image)
+            options: storybookImageOptions()
         }
     },
     args: {
