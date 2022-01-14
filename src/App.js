@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import styles from './App.module.css';
 import { Colors } from './Colors';
+import { Images } from './Images';
 
 const App = () => {
 
-  const [image, setImage] = useState("/mountainlake.jpg")
+  const [image, setImage] = useState(Images.MountainLake)
 
   const onChange = event => {
     event.preventDefault()
@@ -29,8 +30,8 @@ const App = () => {
             <input id="file-upload" type="file" onChange={onChange}/>
         </div>
 
-       <Colors file="/peacockfeathers.jpg" />
-       <Colors file="/irelandpark.jpg" />
+       <Colors file={Images.PeacockFeathers} />
+       <Colors file={Images.IrelandPark} />
 
     </div>
   );
