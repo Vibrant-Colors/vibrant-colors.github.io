@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+// @ts-ignore
 import styles from './App.module.css';
 import { Colors } from './Colors';
 import { Images } from './Images';
 
-const App = () => {
+export const App = () => {
 
   const [image, setImage] = useState(Images.MountainLake)
 
-  const onChange = event => {
+  const onChange = (event: any) => {
     event.preventDefault()
     const fileURL = URL.createObjectURL(event.target.files[0])
     setImage(fileURL)

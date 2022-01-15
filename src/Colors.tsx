@@ -1,7 +1,8 @@
+// @ts-ignore
 import styles from './Colors.module.css'
-import VibrantColors from './VibrantColors';
+import { VibrantColors } from './VibrantColors';
 
-export const Colors = ({file, className}) => {
+export const Colors = ({ file, className }: { file: string, className?: string }) => {
     return (
         <div className={className}>
             <img className={styles.image} src={file} alt=""/>

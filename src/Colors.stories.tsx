@@ -19,4 +19,4 @@ export default {
     }
 };
 
-export const FullSize = args => <Colors {...args}/>
+export const FullSize = (args: JSX.IntrinsicAttributes & { file: string; className?: string | undefined; }) => <Colors {...args}/>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import VibrantColors from './VibrantColors';
+import { VibrantColors } from './VibrantColors';
 import { Images, storybookImageLabels, storybookImageOptions } from './Images';
 
 export default {
@@ -20,4 +20,4 @@ export default {
     }
 };
 
-export const Primary = args => <VibrantColors {...args}/>
+export const Primary = (args: JSX.IntrinsicAttributes & { img: string; }) => <VibrantColors {...args}/>
