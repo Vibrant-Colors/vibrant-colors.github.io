@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
     "node-vibrant": "^3.1.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -57,6 +59,9 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.1.7",
     "prettier": "^2.5.1",
+    "source-map-loader": "^3.0.1",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.4",
     "webpack": "^5.65.0"
   },
   "lint-staged": {
