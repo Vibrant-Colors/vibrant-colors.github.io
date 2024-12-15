@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useCallback} from 'react';
 import styles from './VibrantColors.module.css';
-import * as Vibrant from 'node-vibrant';
+import Vibrant from 'node-vibrant/browser';
 
 const VibrantColors = ({img}) => {
 
