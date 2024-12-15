@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import {ChangeEvent, useState} from 'react';
 import styles from './App.module.css';
 import { Colors } from './Colors';
 import { Images } from './Images';
@@ -7,9 +7,9 @@ const App = () => {
 
   const [image, setImage] = useState(Images.MountainLake)
 
-  const onChange = event => {
+  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault()
-    const fileURL = URL.createObjectURL(event.target.files[0])
+    const fileURL = URL.createObjectURL(event.target.files![0])
     setImage(fileURL)
   }
 
