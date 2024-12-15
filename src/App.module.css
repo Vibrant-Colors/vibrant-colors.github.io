@@ -38,24 +38,12 @@ input[type="file"] {
   display: none;
 }
 
-/* .button {
-  background-color: rgb(58, 125, 212);
-  display: inline-block;
-  padding: 12px 24px;
-  cursor: pointer;
-  border-radius: 5px;
-} */
-
 .button {
-  width: 250px;
-  background: rgb(77, 6, 99);
-  padding: 15px;
-  margin: 5px;
-  color: white;
-  font: inherit;
   text-decoration: none;
-  border-radius: 3px;
   align-self: center;
+  border-radius: 5.5rem;
+  background: var(--Dark-Vibrant, #CF9D13);
+  padding: 1.5rem 6rem;
 }
 
 .flex {
