@@ -2,6 +2,18 @@ import {useEffect, useState, useCallback} from 'react';
 import styles from './VibrantColors.module.css';
 import Vibrant from 'node-vibrant/browser';
 
+function getLightOrDark(color: string) {
+    const _color = color.substring(4, color.length - 1)
+        .replace(/ /g, '')
+        .split(',');
+    const brightness = Math.round(
+        (parseInt(_color[0]) * 299 +
+        parseInt(_color[1]) * 587 +
+        parseInt(_color[2]) * 114) / 1000
+    );
+    return brightness > 125 ? 'black' : 'white';
+}
+
 interface VibrantColorsProps {
     img: string;
 }
@@ -35,14 +47,14 @@ const VibrantColors = ({img}: VibrantColorsProps) => {
     return (
         <div className={styles.colors}>
             <div className={styles.swatchContainer}>
-                <button className={styles.swatch} style={{backgroundColor: colors.DarkMuted ?? ""}}>Placeholder</button>
-                <button className={styles.swatch} style={{backgroundColor: colors.DarkVibrant ?? ""}}>Placeholder</button>
-                <button className={styles.swatch} style={{backgroundColor: colors.LightMuted ?? ""}}>Placeholder</button>
+                <button className={styles.swatch} style={{"--bg-color": colors.DarkMuted ?? "", "--color": getLightOrDark(colors.DarkMuted)}}>Placeholder</button>
+                <button className={styles.swatch} style={{"--bg-color": colors.DarkVibrant ?? "", "--color": getLightOrDark(colors.DarkVibrant)}}>Placeholder</button>
+                <button className={styles.swatch} style={{"--bg-color": colors.LightMuted ?? "", "--color": getLightOrDark(colors.LightMuted)}}>Placeholder</button>
             </div>
             <div className={styles.swatchContainer}>
-                <button className={styles.swatch} style={{backgroundColor: colors.LightVibrant ?? ""}}>Placeholder</button>
-                <button className={styles.swatch} style={{backgroundColor: colors.Muted ?? ""}}>Placeholder</button>
-                <button className={styles.swatch} style={{backgroundColor: colors.Vibrant ?? ""}}>Placeholder</button>
+                <button className={styles.swatch} style={{"--bg-color": colors.LightVibrant ?? "", "--color": getLightOrDark(colors.LightVibrant)}}>Placeholder</button>
+                <button className={styles.swatch} style={{"--bg-color": colors.Muted ?? "", "--color": getLightOrDark(colors.Muted)}}>Placeholder</button>
+                <button className={styles.swatch} style={{"--bg-color": colors.Vibrant ?? "", "--color": getLightOrDark(colors.Vibrant)}}>Placeholder</button>
             </div>
         </div>
     )

@@ -12,6 +12,9 @@
 }
 
 .swatch {
+  all: unset;
+  background-color: var(--bg-color);
+  color: var(--color);
   flex-grow: 1;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
