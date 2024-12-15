@@ -16,6 +16,10 @@ const App = () => {
 
   return (
     <div>
+        <div style={{ marginTop: "2rem", width: "80vw", margin: "0 auto", display: "flex", justifyContent: "flex-end" }}>
+          <a href="https://github.com/Vibrant-Colors/node-vibrant" className={styles.button}>Get Vibrant</a>
+        </div>
+
       <Title title={"Vibrant"} />
 
       <div className={styles.app}>
