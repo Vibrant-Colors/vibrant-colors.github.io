@@ -1,7 +1,8 @@
 import {ChangeEvent, useState} from 'react';
 import styles from './App.module.css';
-import { Colors } from './Colors';
-import { Images } from './Images';
+import {Colors} from './Colors';
+import {Images} from './Images';
+import {Title} from "./title.tsx";
 
 const App = () => {
 
@@ -13,28 +14,32 @@ const App = () => {
     setImage(fileURL)
   }
 
-    /**
-     * @ToDo
-     * Change string file path to image so binding won't fail due to paths
-     */
+  /**
+   * @ToDo
+   * Change string file path to image so binding won't fail due to paths
+   */
 
   return (
+    <div>
+
+    <Title title={"Vibrant"}/>
+
     <div className={styles.app}>
+      <Colors file={image} className={styles.fullSize}/>
 
-        <Colors file={image} className={styles.fullSize} />
+      <div className={`${styles.fullSize} ${styles.flex}`}>
+        <label htmlFor="file-upload" className={styles.button}>
+          Choose Image...
+        </label>
+        <input id="file-upload" type="file" onChange={onChange}/>
+      </div>
 
-        <div className={`${styles.fullSize} ${styles.flex}`}>
-            <label htmlFor="file-upload" className={styles.button}>
-                Choose Image...
-            </label>
-            <input id="file-upload" type="file" onChange={onChange}/>
-        </div>
+      <Colors file={Images.PeacockFeathers}/>
+      <Colors file={Images.IrelandPark}/>
 
-       <Colors file={Images.PeacockFeathers} />
-       <Colors file={Images.IrelandPark} />
-
+      </div>
     </div>
-  );
+    );
 }
 
 export default App;
