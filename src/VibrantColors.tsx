@@ -47,12 +47,12 @@ const VibrantColors = ({img}: VibrantColorsProps) => {
 
     return (
         <div className={styles.colors}>
-                <button className={styles.swatch} style={{"--bg-color": colors.DarkMuted ?? "", "--color": getLightOrDark(colors.DarkMuted)}}>Placeholder</button>
-                <button className={styles.swatch} style={{"--bg-color": colors.DarkVibrant ?? "", "--color": getLightOrDark(colors.DarkVibrant)}}>Placeholder</button>
-                <button className={styles.swatch} style={{"--bg-color": colors.LightMuted ?? "", "--color": getLightOrDark(colors.LightMuted)}}>Placeholder</button>
-                <button className={styles.swatch} style={{"--bg-color": colors.LightVibrant ?? "", "--color": getLightOrDark(colors.LightVibrant)}}>Placeholder</button>
-                <button className={styles.swatch} style={{"--bg-color": colors.Muted ?? "", "--color": getLightOrDark(colors.Muted)}}>Placeholder</button>
-                <button className={styles.swatch} style={{"--bg-color": colors.Vibrant ?? "", "--color": getLightOrDark(colors.Vibrant)}}>Placeholder</button>
+                <p className={styles.swatch} style={{"--bg-color": colors.Vibrant ?? "", "--color": getLightOrDark(colors.Vibrant)}}>Vibrant</p>
+                <p className={styles.swatch} style={{"--bg-color": colors.DarkVibrant ?? "", "--color": getLightOrDark(colors.DarkVibrant)}}>Dark Vibrant</p>
+                <p className={styles.swatch} style={{"--bg-color": colors.LightVibrant ?? "", "--color": getLightOrDark(colors.LightVibrant)}}>Light Vibrant</p>
+                <p className={styles.swatch} style={{"--bg-color": colors.Muted ?? "", "--color": getLightOrDark(colors.Muted)}}>Muted</p>
+                <p className={styles.swatch} style={{"--bg-color": colors.DarkMuted ?? "", "--color": getLightOrDark(colors.DarkMuted)}}>Dark Muted</p>
+                <p className={styles.swatch} style={{"--bg-color": colors.LightMuted ?? "", "--color": getLightOrDark(colors.LightMuted)}}>Light Muted</p>
             </div>
     )
 }
