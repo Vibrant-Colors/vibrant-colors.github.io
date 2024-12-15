@@ -3,6 +3,7 @@ import styles from './VibrantColors.module.css';
 import Vibrant from 'node-vibrant/browser';
 
 function getLightOrDark(color: string) {
+    if (!color) return 'black';
     const _color = color.substring(4, color.length - 1)
         .replace(/ /g, '')
         .split(',');
@@ -46,17 +47,13 @@ const VibrantColors = ({img}: VibrantColorsProps) => {
 
     return (
         <div className={styles.colors}>
-            <div className={styles.swatchContainer}>
                 <button className={styles.swatch} style={{"--bg-color": colors.DarkMuted ?? "", "--color": getLightOrDark(colors.DarkMuted)}}>Placeholder</button>
                 <button className={styles.swatch} style={{"--bg-color": colors.DarkVibrant ?? "", "--color": getLightOrDark(colors.DarkVibrant)}}>Placeholder</button>
                 <button className={styles.swatch} style={{"--bg-color": colors.LightMuted ?? "", "--color": getLightOrDark(colors.LightMuted)}}>Placeholder</button>
-            </div>
-            <div className={styles.swatchContainer}>
                 <button className={styles.swatch} style={{"--bg-color": colors.LightVibrant ?? "", "--color": getLightOrDark(colors.LightVibrant)}}>Placeholder</button>
                 <button className={styles.swatch} style={{"--bg-color": colors.Muted ?? "", "--color": getLightOrDark(colors.Muted)}}>Placeholder</button>
                 <button className={styles.swatch} style={{"--bg-color": colors.Vibrant ?? "", "--color": getLightOrDark(colors.Vibrant)}}>Placeholder</button>
             </div>
-        </div>
     )
 }
 

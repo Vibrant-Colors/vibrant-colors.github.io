@@ -39,11 +39,13 @@ input[type="file"] {
 }
 
 .button {
+  color: #FFF;
   text-decoration: none;
   align-self: center;
   border-radius: 5.5rem;
   background: var(--Dark-Vibrant, #CF9D13);
   padding: 1.5rem 6rem;
+  font-weight: 800;
 }
 
 .flex {

@@ -14,11 +14,6 @@ const App = () => {
     setImage(fileURL)
   }
 
-  /**
-   * @ToDo
-   * Change string file path to image so binding won't fail due to paths
-   */
-
   return (
     <div>
 
@@ -29,7 +24,7 @@ const App = () => {
 
       <div className={`${styles.fullSize} ${styles.flex}`}>
         <label htmlFor="file-upload" className={styles.button}>
-          Choose Image...
+         Upload your own
         </label>
         <input id="file-upload" type="file" onChange={onChange}/>
       </div>
