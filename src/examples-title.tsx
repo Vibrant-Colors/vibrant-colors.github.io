@@ -22,7 +22,7 @@ export const ExamplesTitle = ({ title }: ExamplesTitleProps) => {
           style={{
             position: "absolute",
             top: "calc(50% - calc(0.375rem / 2))",
-            zIndex: -1, 
+            zIndex: -1,
             left: "50%",
             transform: "translate(-50%, -50%)",
             borderTop: "0.375rem dotted #CF9D13",
@@ -31,7 +31,6 @@ export const ExamplesTitle = ({ title }: ExamplesTitleProps) => {
         />
         <h2
           style={{
-            margin: 0,
             width: "fit-content",
             margin: "0 auto",
             background: "#fff",
@@ -43,7 +42,7 @@ export const ExamplesTitle = ({ title }: ExamplesTitleProps) => {
             textAlign: "center",
           }}
         >
-          Examples
+          {title}
         </h2>
       </div>
     </div>

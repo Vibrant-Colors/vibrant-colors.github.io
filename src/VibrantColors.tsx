@@ -2,7 +2,7 @@ import {useEffect, useState, useCallback} from 'react';
 import styles from './VibrantColors.module.css';
 import Vibrant from 'node-vibrant/browser';
 
-function getLightOrDark(color: string) {
+function getLightOrDark(color: string | null) {
     if (!color) return 'black';
     const _color = color.substring(4, color.length - 1)
         .replace(/ /g, '')
@@ -47,12 +47,12 @@ const VibrantColors = ({img}: VibrantColorsProps) => {
 
     return (
         <div className={styles.colors}>
-                <p className={styles.swatch} style={{"--bg-color": colors.Vibrant ?? "", "--color": getLightOrDark(colors.Vibrant)}}>Vibrant</p>
-                <p className={styles.swatch} style={{"--bg-color": colors.DarkVibrant ?? "", "--color": getLightOrDark(colors.DarkVibrant)}}>Dark Vibrant</p>
-                <p className={styles.swatch} style={{"--bg-color": colors.LightVibrant ?? "", "--color": getLightOrDark(colors.LightVibrant)}}>Light Vibrant</p>
-                <p className={styles.swatch} style={{"--bg-color": colors.Muted ?? "", "--color": getLightOrDark(colors.Muted)}}>Muted</p>
-                <p className={styles.swatch} style={{"--bg-color": colors.DarkMuted ?? "", "--color": getLightOrDark(colors.DarkMuted)}}>Dark Muted</p>
-                <p className={styles.swatch} style={{"--bg-color": colors.LightMuted ?? "", "--color": getLightOrDark(colors.LightMuted)}}>Light Muted</p>
+                <p className={styles.swatch} style={{"--bg-color": colors.Vibrant ?? "", "--color": getLightOrDark(colors.Vibrant)} as React.CSSProperties}>Vibrant</p>
+                <p className={styles.swatch} style={{"--bg-color": colors.DarkVibrant ?? "", "--color": getLightOrDark(colors.DarkVibrant)} as React.CSSProperties}>Dark Vibrant</p>
+                <p className={styles.swatch} style={{"--bg-color": colors.LightVibrant ?? "", "--color": getLightOrDark(colors.LightVibrant)} as React.CSSProperties}>Light Vibrant</p>
+                <p className={styles.swatch} style={{"--bg-color": colors.Muted ?? "", "--color": getLightOrDark(colors.Muted)} as React.CSSProperties}>Muted</p>
+                <p className={styles.swatch} style={{"--bg-color": colors.DarkMuted ?? "", "--color": getLightOrDark(colors.DarkMuted)} as React.CSSProperties}>Dark Muted</p>
+                <p className={styles.swatch} style={{"--bg-color": colors.LightMuted ?? "", "--color": getLightOrDark(colors.LightMuted)} as React.CSSProperties}>Light Muted</p>
             </div>
     )
 }
