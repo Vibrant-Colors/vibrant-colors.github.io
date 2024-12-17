@@ -11,7 +11,7 @@
   },
   "packageManager": "pnpm@9.4.0",
   "dependencies": {
-    "node-vibrant": "4.0.0-alpha.2",
+    "node-vibrant": "4.0.0-alpha.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
